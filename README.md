@@ -18,7 +18,7 @@ k2liumc
 | ----------------------- | ------------------------------ | -------------------- | ------------- |
 | headerMenu|头导航栏结构。| Array|[]|
 | siderMenuMap|左侧导航栏map，key为头导航栏item的name值，值为右侧显示的导航栏结构。此处siderMenu失效。| Object |{}|
-| siderMenu|在没有头导航栏页面中，此处为左侧导航栏结构。|Func(selectedFields)|Array|[]|
+| siderMenu|在没有头导航栏页面中，此处为左侧导航栏结构。|Array|[]|
 
 ## kfc-sider、kfc-header-menu属性
 | 属性        | 说明     | 类型   | 默认值 |
