@@ -1,0 +1,10 @@
+.kfc-header-userinfo-1 {
+  float: right;
+}
+.kfc-header-userinfo-1-name {
+  width: 150px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: white;
+  font-size: 16px;
+}

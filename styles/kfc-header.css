@@ -1,0 +1,22 @@
+.kfc-header-logo {
+  float: left;
+  width: 300px;
+  max-height: 64px;
+}
+
+.kfc-header-logo-img {
+  max-width: 250px;
+  max-height: 64px;
+}
+
+.kfc-header-menu {
+  width: calc(100% - 500px);
+  height: 100%;
+  float: left;
+}
+
+.kfc-header-userinfo {
+  width: 200px;
+  height: 100%;
+  float: left;
+}
