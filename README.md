@@ -42,4 +42,50 @@ import KFCFrame from '@/components/kfc-frame'
 ```
 ```
 修改kfc-frame.vue，将导航栏结构传过去。
+demo：
+```bash
+headerMenu: [
+        {
+          name: 'dataset',
+          icon: 'md-person',
+          title: '数据管理'
+        },
+        {
+          name: 'model',
+          icon: 'md-person',
+          title: '模型管理'
+        }
+      ],
+      siderMenuMap: {
+        'dataset': [
+          {
+            name: 'dataset.list',
+            icon: 'md-person',
+            title: '数据列表'
+          },
+          {
+            name: 'dataset.create',
+            icon: 'md-person',
+            title: '数据创建'
+          },
+          {
+            name: 'dataset.edit',
+            icon: 'md-person',
+            title: '数据编辑'
+          }
+        ],
+        'model': [
+          {
+            name: 'model.list',
+            icon: 'md-person',
+            title: '模型列表'
+          },
+          {
+            name: 'model.edit',
+            icon: 'md-person',
+            title: '模型编辑'
+          }
+        ]
+      }
+```
 ```
