@@ -26,7 +26,7 @@ k2liumc
 |title|显示的菜单名称。|String|''|
 |name|对应的路由name。|String|''|
 |icon|左侧显示的图标。|String|''|
-|children|子菜单,头导航栏暂时没有Array。|null|
+|children|子菜单,头导航栏暂时没有。|Array|[]
 
 ## 示例
 ```
