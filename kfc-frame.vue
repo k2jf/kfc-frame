@@ -39,23 +39,19 @@ export default {
 	data () {
 		return {
       headerMenu: [
+        {
+          name: 'dataset.list',
+          icon: 'md-person',
+          title: '数据管理'
+        },
+        {
+          name: 'model.list',
+          icon: 'md-person',
+          title: '模型管理'
+        }
       ],
       siderMenuMap: null,
-      siderMenu: [{
-        name: 'dataset.list',
-        icon: 'md-person',
-        title: '数据列表'
-      },
-      {
-        name: 'dataset.create',
-        icon: 'md-person',
-        title: '数据创建'
-      },
-      {
-        name: 'dataset.edit',
-        icon: 'md-person',
-        title: '数据编辑'
-      }],
+      siderMenu: [],
       prefixCls: prefixCls
 		}
 	},

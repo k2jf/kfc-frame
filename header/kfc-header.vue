@@ -28,10 +28,6 @@ export default {
 		return {
       prefixCls: prefixCls
 		}
-	},
-	mounted () {
-	},
-	methods: {
 	}
 }
 </script>

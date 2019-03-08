@@ -3,8 +3,7 @@
     <i-menu
       :active-name="activeName"
       mode="vertical"
-      :open-names="openNames"
-    >
+      :open-names="openNames">
       <template v-for="submenu in dataList">
         <i-menu-item
           :name="submenu.name"

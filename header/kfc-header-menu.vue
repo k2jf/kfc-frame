@@ -5,8 +5,7 @@
     theme="dark"
     width="auto"
     @on-select="onMenuSelect"
-    :class="[prefixCls]"
-  >
+    :class="[prefixCls]">
     <template v-for="submenu in data">
       <i-menu-item
         :name="submenu.name"

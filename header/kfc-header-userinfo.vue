@@ -30,8 +30,6 @@ export default {
       prefixCls: prefixCls
 		}
 	},
-	mounted () {
-	},
 	methods: {
     logout () {
     }
