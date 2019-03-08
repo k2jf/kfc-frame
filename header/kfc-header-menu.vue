@@ -38,6 +38,10 @@ export default {
       default: function () {
         return []
       }
+    },
+    siderMapping: {
+      type: Object,
+      default: null
     }
   },
   data () {
@@ -47,47 +51,32 @@ export default {
 		}
 	},
   created () {
-    let routeFullPath = this.$router.currentRoute.fullPath
-    let matchedActiveName = this.getMachedActiveName(routeFullPath)
-    if (matchedActiveName) {
-      this.activeName = matchedActiveName
-      this.$emit('on-select', matchedActiveName)
+    // 无子菜单
+    if (!this.siderMapping) {
+      this.activeName = this.$router.currentRoute.name
+      return
+    }
+    // 有子菜单
+    for (let index in this.siderMapping) {
+      let value = this.siderMapping[index]
+      for (let i = 0; i < value.length; i++) {
+        if (value[i].name === this.$router.currentRoute.name) {
+          this.activeName = index
+          this.$emit('on-select', value)
+          return
+        }
+      }
     }
   },
   methods: {
-    getMachedActiveName (routeFullPath) {
-      for (let i = 0; i < this.data.length; i++) {
-        if ((routeFullPath + '/').indexOf('/' + this.data[i].name + '/') > -1) {
-          return this.data[i].name
-        }
-      }
-
-      return null
-    },
     onMenuSelect (active) {
-      let matchedRouter = this.getMatchedRouter(this.$router.options.routes, active)
-      if (matchedRouter) {
-        this.$router.push({path: matchedRouter.path})
-        this.$emit('on-select', active)
+      if (!this.siderMapping) {
+        this.$router.push({name: active})
+        return
       }
-    },
-    getMatchedRouter (routers, active) {
-      let result = null
-      for (let i = 0; i < routers.length; i++) {
-        if ((routers[i].path + '/').indexOf('/' + active + '/') > -1) {
-          result = routers[i]
-          break
-        }
 
-        if (!routers[i].children) {
-          continue
-        }
-        result = this.getMatchedRouter(routers[i].children, active)
-        if (result) {
-          break
-        }
-      }
-      return result
+      this.$router.push({name: this.siderMapping[active][0].name})
+      this.$emit('on-select', this.siderMapping[active])
     }
   }
 }

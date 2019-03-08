@@ -3,7 +3,7 @@
     <i-avatar icon="ios-person" size="large" />
     <span :class="[prefixCls + '-name']">admin</span>
     <i-dropdown>
-      <i-icon type="md-arrow-dropdown"></i-icon>
+      <i-icon type="md-arrow-dropdown" />
       <i-dropdown-menu slot="list">
         <i-dropdown-item @click.native="logout">退出</i-dropdown-item>
       </i-dropdown-menu>

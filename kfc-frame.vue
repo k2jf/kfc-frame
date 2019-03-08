@@ -3,6 +3,7 @@
     <kfc-header>
       <kfc-header-menu
       :data="headerMenu"
+      :sider-mapping="siderMenuMap"
       @on-select="onHeaderMenuSelect"
       slot="menu" />
       <kfc-header-userinfo slot="userinfo" />
@@ -38,57 +39,29 @@ export default {
 	data () {
 		return {
       headerMenu: [
-        {
-          name: 'dataset',
-          icon: 'md-person',
-          title: '数据管理'
-        },
-        {
-          name: 'model',
-          icon: 'md-person',
-          title: '模型管理'
-        }
       ],
-      siderMenuMap: {
-        'dataset': [
-          {
-            name: 'dataset.list',
-            icon: 'md-person',
-            title: '数据列表'
-          },
-          {
-            name: 'dataset.create',
-            icon: 'md-person',
-            title: '数据创建'
-          },
-          {
-            name: 'dataset.edit',
-            icon: 'md-person',
-            title: '数据编辑'
-          }
-        ],
-        'model': [
-          {
-            name: 'model.list',
-            icon: 'md-person',
-            title: '模型列表'
-          },
-          {
-            name: 'model.edit',
-            icon: 'md-person',
-            title: '模型编辑'
-          }
-        ]
+      siderMenuMap: null,
+      siderMenu: [{
+        name: 'dataset.list',
+        icon: 'md-person',
+        title: '数据列表'
       },
-      siderMenu: [],
+      {
+        name: 'dataset.create',
+        icon: 'md-person',
+        title: '数据创建'
+      },
+      {
+        name: 'dataset.edit',
+        icon: 'md-person',
+        title: '数据编辑'
+      }],
       prefixCls: prefixCls
 		}
 	},
-	mounted () {
-	},
 	methods: {
-    onHeaderMenuSelect (activeHeaderMenuName) {
-      this.siderMenu = this.siderMenuMap[activeHeaderMenuName]
+    onHeaderMenuSelect (siderMenu) {
+      this.siderMenu = siderMenu
     }
 	}
 }
