@@ -41,51 +41,23 @@ import KFCFrame from '@/components/kfc-frame'
       component: KFCFrame,
 ```
 ```
-修改kfc-frame.vue，将导航栏结构传过去。
-demo：
-```bash
-headerMenu: [
-        {
-          name: 'dataset',
-          icon: 'md-person',
-          title: '数据管理'
-        },
-        {
-          name: 'model',
-          icon: 'md-person',
-          title: '模型管理'
-        }
-      ],
-      siderMenuMap: {
-        'dataset': [
-          {
-            name: 'dataset.list',
-            icon: 'md-person',
-            title: '数据列表'
-          },
-          {
-            name: 'dataset.create',
-            icon: 'md-person',
-            title: '数据创建'
-          },
-          {
-            name: 'dataset.edit',
-            icon: 'md-person',
-            title: '数据编辑'
-          }
-        ],
-        'model': [
-          {
-            name: 'model.list',
-            icon: 'md-person',
-            title: '模型列表'
-          },
-          {
-            name: 'model.edit',
-            icon: 'md-person',
-            title: '模型编辑'
-          }
-        ]
-      }
+在src目录下创建menu文件夹，在menu文件夹下创建menu.js文件，文件格式如下:
+module.exports = {
+  headerMenu: [
+    {
+      name: 'dataset.list',
+      icon: 'md-person',
+      title: '数据管理2'
+    },
+    {
+      name: 'model.list',
+      icon: 'md-person',
+      title: '模型管理'
+    }
+  ],
+  siderMenuMap: null,
+  siderMenu: []
+}
+
 ```
 ```

@@ -24,6 +24,8 @@ import { Content } from 'iview'
 import KFCContent from './content/kfc-content.vue'
 import KFCSider from './sider/kfc-sider.vue'
 
+import { headerMenu, siderMenuMap, siderMenu } from '@/menu/menu'
+
 const prefixCls = 'kfc-frame'
 
 export default {
@@ -38,20 +40,9 @@ export default {
 	},
 	data () {
 		return {
-      headerMenu: [
-        {
-          name: 'dataset.list',
-          icon: 'md-person',
-          title: '数据管理'
-        },
-        {
-          name: 'model.list',
-          icon: 'md-person',
-          title: '模型管理'
-        }
-      ],
-      siderMenuMap: null,
-      siderMenu: [],
+      headerMenu: headerMenu,
+      siderMenuMap: siderMenuMap,
+      siderMenu: siderMenu,
       prefixCls: prefixCls
 		}
 	},
