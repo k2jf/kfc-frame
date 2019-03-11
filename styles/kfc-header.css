@@ -4,6 +4,12 @@
   max-height: 64px;
 }
 
+.kfc-header-logo span {
+  color: white;
+  font-size: 40px;
+  margin-left: 80px;
+}
+
 .kfc-header-logo-img {
   max-width: 250px;
   max-height: 64px;

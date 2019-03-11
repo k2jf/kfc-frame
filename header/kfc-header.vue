@@ -2,7 +2,7 @@
   <i-header :class="[prefixCls]">
     <div :class="[prefixCls + '-logo']">
       <slot>
-        <img :class="[prefixCls + '-logo-img']" src="@/assets/logo.png" />
+        <span>KFC</span>
       </slot>
     </div>
     <div :class="[prefixCls + '-menu']">
