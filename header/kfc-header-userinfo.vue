@@ -5,7 +5,9 @@
     <i-dropdown>
       <i-icon type="md-arrow-dropdown" />
       <i-dropdown-menu slot="list">
-        <i-dropdown-item @click.native="logout">退出</i-dropdown-item>
+        <i-dropdown-item @click.native="logout">
+          退出
+        </i-dropdown-item>
       </i-dropdown-menu>
     </i-dropdown>
   </div>
@@ -17,22 +19,22 @@ import { Avatar, Icon, Dropdown, DropdownMenu, DropdownItem } from 'iview'
 const prefixCls = 'kfc-header-userinfo-1'
 
 export default {
-	name: 'kfc-header-userinfo-1',
+	name: 'KfcHeaderUserinfo',
 	components: {
-    'i-avatar': Avatar,
-    'i-icon': Icon,
-    'i-dropdown': Dropdown,
-    'i-dropdown-menu': DropdownMenu,
-    'i-dropdown-item': DropdownItem
+		'i-avatar': Avatar,
+		'i-icon': Icon,
+		'i-dropdown': Dropdown,
+		'i-dropdown-menu': DropdownMenu,
+		'i-dropdown-item': DropdownItem
 	},
 	data () {
 		return {
-      prefixCls: prefixCls
+			prefixCls: prefixCls
 		}
 	},
 	methods: {
-    logout () {
-    }
+		logout () {
+		}
 	}
 }
 </script>
