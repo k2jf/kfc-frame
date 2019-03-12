@@ -24,7 +24,7 @@ import { Content } from 'iview'
 import KFCContent from './content/kfc-content.vue'
 import KFCSider from './sider/kfc-sider.vue'
 
-import { headerMenu, siderMenuMap, siderMenu } from '@/menu/menu'
+import { headerMenu, siderMenuMap, siderMenu } from '@/config/menu'
 
 const prefixCls = 'kfc-frame'
 
