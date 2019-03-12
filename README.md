@@ -29,7 +29,7 @@ k2liumc
 |children|子菜单,头导航栏暂时没有。|Array|[]
 
 ## 示例
-1、在router文件中引入并配置在根节点中，许下：
+1、在router文件中引入并配置在根节点中，如下：
 ```bash
 import KFCFrame from '@/components/kfc-frame'
 
@@ -38,6 +38,19 @@ import KFCFrame from '@/components/kfc-frame'
       path: '/',
       name: 'index',
       component: KFCFrame,
+      chilren: [
+        {
+          path: '/page1',
+          name: 'page1',
+          component: Page1
+        },
+        {
+          path: '/page2',
+          name: 'page2',
+          component: Page2
+        },
+        ......
+      ]
 ```
 2、在src目录下创建menu文件夹，在menu文件夹下创建menu.js文件，文件格式如下:
 ```bash
@@ -45,14 +58,14 @@ import KFCFrame from '@/components/kfc-frame'
 module.exports = {
   headerMenu: [
     {
-      name: 'dataset.list',
+      name: 'page1',
       icon: 'md-person',
-      title: '数据管理'
+      title: '菜单1'
     },
     {
-      name: 'model.list',
+      name: 'page2',
       icon: 'md-person',
-      title: '模型管理'
+      title: '菜单2'
     }
   ]
 }
@@ -62,24 +75,23 @@ module.exports = {
 module.exports = {
   siderMenu: [
     {
-      name: 'dataset.list',
+      name: 'page1',
       icon: 'md-person',
-      title: '数据管理'
+      title: '菜单1'
     },
     {
-      name: 'model.list',
       icon: 'md-person',
-      title: '模型管理',
+      title: '菜单2',
       children: [
         {
-          name: 'model.add',
+          name: 'page3',
           icon: 'md-person',
-          title: '模型录入'
+          title: '子菜单1'
         },
         {
-          name: 'model.query',
+          name: 'page4',
           icon: 'md-person',
-          title: '模型查询'
+          title: '子菜单2'
         }
       ]
     }
@@ -91,39 +103,50 @@ module.exports = {
 module.exports = {
   headerMenu: [
     {
-      name: 'dataset',
+      name: 'top-menu1',
       icon: 'md-person',
-      title: '数据管理'
+      title: '导航菜单1'
     },
     {
-      name: 'model',
+      name: 'top-menu2',
       icon: 'md-person',
-      title: '模型管理'
+      title: '导航菜单2'
     }
   ],
   siderMenuMap: {
-    'dataset': [
+    'top-menu1': [
       {
-        name: 'dataset.add',
+        name: 'page1',
         icon: 'md-person',
-        title: '数据录入'
+        title: '左侧一级菜单1'
       },
       {
-        name: 'dataset.query',
+        name: 'page2',
         icon: 'md-person',
-        title: '数据查询'
+        title: '左侧一级菜单2'
       }
     ],
-    'model': [
+    'top-menu2': [
       {
-        name: 'model.add',
+        name: 'page3',
         icon: 'md-person',
-        title: '模型录入'
+        title: '左侧一级菜单3'
       },
       {
-        name: 'model.query',
         icon: 'md-person',
-        title: '模型查询'
+        title: '左侧一级菜单4',
+        children: [
+          {
+            name: 'page4',
+            icon: 'md-person',
+            title: '左侧二级菜单1'
+          },
+          {
+            name: 'page4',
+            icon: 'md-person',
+            title: '左侧二级菜单2'
+          }
+        ]
       }
     ]
   }
