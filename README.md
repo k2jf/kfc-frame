@@ -52,7 +52,7 @@ import KFCFrame from '@/components/kfc-frame'
         ......
       ]
 ```
-2、在src目录下创建menu文件夹，在menu文件夹下创建menu.js文件，文件格式如下:
+2、在src/config目录下新建menu.js文件，文件格式如下:
 ```bash
 1)只有头导航栏菜单，无左侧导航栏
 module.exports = {
