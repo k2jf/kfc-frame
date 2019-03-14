@@ -23,59 +23,77 @@ import { Menu, MenuItem, Icon } from 'iview'
 const prefixCls = 'kfc-header-memu-1'
 
 export default {
-	name: 'KfcHeaderMenu',
-	components: {
-		'i-menu': Menu,
-		'i-menu-item': MenuItem,
-		'i-icon': Icon
-	},
-	props: {
-		data: {
-			type: Array,
-			required: true,
-			default: function () {
-				return []
-			}
-		},
-		siderMapping: {
-			type: Object,
-			default: null
-		}
-	},
-	data () {
-		return {
-			activeName: '',
-			prefixCls: prefixCls
-		}
-	},
-	created () {
-		// 无子菜单
-		if (!this.siderMapping) {
-			this.activeName = this.$router.currentRoute.name
-			return
-		}
-		// 有子菜单
-		for (let index in this.siderMapping) {
-			let value = this.siderMapping[index]
-			for (let i = 0; i < value.length; i++) {
-				if (value[i].name === this.$router.currentRoute.name) {
-					this.activeName = index
-					this.$emit('on-select', value)
-					return
-				}
-			}
-		}
-	},
-	methods: {
-		onMenuSelect (active) {
-			if (!this.siderMapping) {
-				this.$router.push({ name: active })
-				return
-			}
+  name: 'KfcHeaderMenu',
+  components: {
+    'i-menu': Menu,
+    'i-menu-item': MenuItem,
+    'i-icon': Icon
+  },
+  props: {
+    data: {
+      type: Array,
+      required: true,
+      default: function () {
+        return []
+      }
+    },
+    siderMapping: {
+      type: Object,
+      default: null
+    }
+  },
+  data () {
+    return {
+      activeName: '',
+      prefixCls: prefixCls
+    }
+  },
+  created () {
+    // 无子菜单
+    if (!this.siderMapping) {
+      this.activeName = this.$router.currentRoute.name
+      return
+    }
+    // 有子菜单
+    for (let index in this.siderMapping) {
+      let value = this.siderMapping[index]
+      if (this.siderMenusRouteMatched(value)) {
+        this.activeName = index
+        this.$emit('on-select', value)
+        break
+      }
+    }
+  },
+  methods: {
+    onMenuSelect (active) {
+      if (!this.siderMapping) {
+        this.$router.push({ name: active })
+        return
+      }
 
-			this.$router.push({ name: this.siderMapping[active][0].name })
-			this.$emit('on-select', this.siderMapping[active])
-		}
-	}
+      this.$router.push({ name: this.siderMapping[active][0].name })
+      this.$emit('on-select', this.siderMapping[active])
+    },
+    siderMenusRouteMatched (menu) {
+      for (let i = 0; i < menu.length; i++) {
+        if (menu[i].name === this.$router.currentRoute.name) {
+          return true
+        }
+
+        let children = menu[i].children
+        if (!children) {
+          continue
+        }
+
+        for (let j = 0; j < children.length; j++) {
+          if (children[j].name === this.$router.currentRoute.name) {
+            return true
+          }
+        }
+      }
+
+      return false
+    }
+  }
 }
 </script>
