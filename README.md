@@ -33,25 +33,40 @@ k2liumc
 ```bash
 import KFCFrame from '@/components/kfc-frame'
 
-routes: [
-  {
-    path: '/',
-    name: 'index',
-    component: KFCFrame,
-    children: [
-      {
-        path: '/page1',
-        name: 'page1',
-        component: Page1
-      },
-      {
-        path: '/page2',
-        name: 'page2',
-        component: Page2
-      }
-    ]
-  }
-]
+    routes: [
+    {
+      path: '/',
+      name: 'index',
+      component: KFCFrame,
+      children: [
+        {
+          path: '/page1',
+          name: 'page1',
+          component: Home
+        },
+        {
+          path: '/page2',
+          name: 'page2',
+          component: Home
+        },
+        {
+          path: '/page3',
+          name: 'page3',
+          component: Home
+        },
+        {
+          path: '/page4',
+          name: 'page4',
+          component: Home
+        },
+        {
+          path: '/page5',
+          name: 'page5',
+          component: Home
+        }
+      ]
+    }
+  ]
 ```
 2、在src/config目录下新建menu.js文件，文件格式如下:
 ```bash
@@ -134,6 +149,7 @@ module.exports = {
         title: '左侧一级菜单3'
       },
       {
+        name: 'page',
         icon: 'md-person',
         title: '左侧一级菜单4',
         children: [
@@ -143,7 +159,7 @@ module.exports = {
             title: '左侧二级菜单1'
           },
           {
-            name: 'page4',
+            name: 'page5',
             icon: 'md-person',
             title: '左侧二级菜单2'
           }
