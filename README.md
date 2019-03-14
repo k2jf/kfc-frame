@@ -38,7 +38,7 @@ import KFCFrame from '@/components/kfc-frame'
       path: '/',
       name: 'index',
       component: KFCFrame,
-      chilren: [
+      children: [
         {
           path: '/page1',
           name: 'page1',
