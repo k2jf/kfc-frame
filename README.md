@@ -98,6 +98,7 @@ module.exports = {
     {
       icon: 'md-person',
       title: '菜单2',
+      name: 'page2',
       children: [
         {
           name: 'page3',
