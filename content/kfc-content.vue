@@ -10,14 +10,14 @@ import { Content } from 'iview'
 const prefixCls = 'kfc-content'
 
 export default {
-	name: 'KfcContent',
-	components: {
-		'i-content': Content
-	},
-	data () {
-		return {
-			prefixCls: prefixCls
-		}
-	}
+  name: 'KfcContent',
+  components: {
+    'i-content': Content
+  },
+  data () {
+    return {
+      prefixCls: prefixCls
+    }
+  }
 }
 </script>

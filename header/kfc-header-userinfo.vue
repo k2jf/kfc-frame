@@ -19,22 +19,22 @@ import { Avatar, Icon, Dropdown, DropdownMenu, DropdownItem } from 'iview'
 const prefixCls = 'kfc-header-userinfo-1'
 
 export default {
-	name: 'KfcHeaderUserinfo',
-	components: {
-		'i-avatar': Avatar,
-		'i-icon': Icon,
-		'i-dropdown': Dropdown,
-		'i-dropdown-menu': DropdownMenu,
-		'i-dropdown-item': DropdownItem
-	},
-	data () {
-		return {
-			prefixCls: prefixCls
-		}
-	},
-	methods: {
-		logout () {
-		}
-	}
+  name: 'KfcHeaderUserinfo',
+  components: {
+    'i-avatar': Avatar,
+    'i-icon': Icon,
+    'i-dropdown': Dropdown,
+    'i-dropdown-menu': DropdownMenu,
+    'i-dropdown-item': DropdownItem
+  },
+  data () {
+    return {
+      prefixCls: prefixCls
+    }
+  },
+  methods: {
+    logout () {
+    }
+  }
 }
 </script>
