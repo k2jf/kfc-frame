@@ -1,10 +1,10 @@
 <template>
   <div :class="[prefixCls]">
     <i-menu
-      ref="menu"
       :active-name="activeName"
       mode="vertical"
-      :open-names="openNames">
+      :open-names="openNames"
+      ref="menu">
       <template v-for="submenu in dataList">
         <i-menu-item
           :name="submenu.name"
@@ -69,7 +69,6 @@ export default {
     data (val) {
       this.dataList = val
       this.init()
-      // setTimeout(this.init, 0)
     }
   },
   mounted () {
@@ -101,7 +100,9 @@ export default {
 
       if (this.activeName) {
         let parentName = this.getParentName(this.activeName)
-        this.openNames.push(parentName)
+        if (parentName) {
+          this.openNames.push(parentName)
+        }
       }
 
       this.$nextTick(() => {

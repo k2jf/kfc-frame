@@ -1,6 +1,7 @@
 .kfc-content {
   float: left;
-  width: calc(100% - 250px);
+  width: calc(100% - 240px);
   height: calc(100vh - 64px);
-  padding: 10px 10px 0 0;
+  padding: 16px 16px 16px 16px;
+  background: #f8f8f9;
 }

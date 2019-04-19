@@ -1,4 +1,9 @@
 .kfc-sider {
-  width: 250px;
+  width: 240px;
   float: left;
+  background: #f8f8f9;
+  height: calc(100vh - 64px);
+}
+.kfc-sider .ivu-menu {
+  height: 100%;
 }

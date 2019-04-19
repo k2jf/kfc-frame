@@ -20,14 +20,14 @@ import { Header } from 'iview'
 const prefixCls = 'kfc-header'
 
 export default {
-	name: 'KfcHeader',
-	components: {
-		'i-header': Header
-	},
-	data () {
-		return {
-			prefixCls: prefixCls
-		}
-	}
+  name: 'KfcHeader',
+  components: {
+    'i-header': Header
+  },
+  data () {
+    return {
+      prefixCls: prefixCls
+    }
+  }
 }
 </script>
