@@ -5,8 +5,8 @@
       :rules="validateRules"
       class="form"
       ref="userForm">
-      <FormItem label="当前密码" prop="oldPassword">
-        <Input type="password" v-model="user.oldPassword"></Input>
+      <FormItem label="当前密码" prop="password">
+        <Input type="password" v-model="user.password"></Input>
       </FormItem>
       <FormItem label="新密码" prop="newPassword">
         <Input type="password" v-model="user.newPassword"></Input>
@@ -48,14 +48,15 @@ export default {
   },
   data () {
     const validateOldPass = (rule, value, callback) => {
-      value = this.user.oldPassword
-      if (value.length < 3 || value.length > 50) {
+      value = this.user.password
+      if (!value || value.length < 3 || value.length > 50) {
         callback(new Error('请输入正确的密码'))
       }
       callback()
     }
     const validatePass = (rule, value, callback) => {
-      if (value.length < 3 || value.length > 50) {
+      value = this.user.newPassword
+      if (!value || value.length < 3 || value.length > 50) {
         callback(new Error('请输入正确的密码'))
       }
       callback()
@@ -77,11 +78,11 @@ export default {
       },
       user: {
         id: 2,
-        oldPassword: '',
+        password: '',
         newPassword: ''
       },
       validateRules: {
-        oldPassword: [{ required: true, validator: validateOldPass, trigger: 'blur' }],
+        password: [{ required: true, validator: validateOldPass, trigger: 'blur' }],
         newPassword: [{ required: true, validator: validatePass, trigger: 'blur' }],
         passwordCheck: [{ required: true, validator: validatePassCheck, trigger: 'blur' }]
       }
@@ -92,7 +93,7 @@ export default {
   },
   methods: {
     init () {
-      this.user = { id: 2, oldPassword: '', newPassword: '' }// localStorage.getItem('user')
+      this.user = JSON.parse(localStorage.getItem('user'))
     },
     // view event
     onModifyButtonClick () {
@@ -104,7 +105,7 @@ export default {
 
         this.dependence.modifyButtonLoading = true
         let newPassword = new MD5().update(this.user.newPassword).digest('hex')
-        this.$axios.put(`/users/${this.user.id}/?password=${newPassword}`)
+        this.$axios.put(`/users/${this.user.id}?password=${newPassword}`)
           .then(() => {
             this.$router.go(-1)
           })
