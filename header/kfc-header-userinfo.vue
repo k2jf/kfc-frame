@@ -1,7 +1,7 @@
 <template>
   <div :class="[prefixCls]">
     <i-avatar icon="ios-person" size="large" />
-    <span :class="[prefixCls + '-name']">admin</span>
+    <span :class="[prefixCls + '-name']">{{ userName }}</span>
     <i-dropdown>
       <i-icon type="md-arrow-dropdown" />
       <i-dropdown-menu slot="list">
@@ -32,7 +32,8 @@ export default {
   },
   data () {
     return {
-      prefixCls: prefixCls
+      prefixCls: prefixCls,
+      userName: JSON.parse(localStorage.getItem('user')).name
     }
   },
   methods: {

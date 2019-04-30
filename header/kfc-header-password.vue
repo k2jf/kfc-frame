@@ -105,7 +105,7 @@ export default {
 
         this.dependence.modifyButtonLoading = true
         let newPassword = new MD5().update(this.user.newPassword).digest('hex')
-        this.$axios.put(`/users/${this.user.id}?password=${newPassword}`)
+        this.$axios.put(`/usrmgr/users/${this.user.id}?password=${newPassword}`)
           .then(() => {
             this.$router.go(-1)
           })
