@@ -1,4 +1,4 @@
-import KFCFrame from './kfc-frame.vue'
+import KFCNavigation from './kfc-navigation.vue'
 import './styles/index.css'
 
-export default KFCFrame
+export default KFCNavigation

@@ -26,10 +26,10 @@ import KFCSider from './sider/kfc-sider.vue'
 
 import menu from '@/config/menu'
 
-const prefixCls = 'kfc-frame'
+const prefixCls = 'kfc-navigation'
 
 export default {
-  name: 'KfcFrame',
+  name: 'KfcNavigation',
   components: {
     'kfc-header': KFCHeader,
     'kfc-header-menu': KFCHeaderMenu,

@@ -1,4 +1,4 @@
-# kfc-frame
+# kfc-navigation
 
 ## 功能
 提供外层导航结构，包含头导航栏、左侧导航栏及主显示区域。
@@ -13,7 +13,7 @@ k2liumc
 ## 依赖
 无
 
-## kfc-frame属性
+## kfc-navigation属性
 | 属性                    | 说明                           | 类型                 | 默认值        |
 | ----------------------- | ------------------------------ | -------------------- | ------------- |
 | headerMenu|头导航栏结构。| Array|[]|
@@ -31,13 +31,13 @@ k2liumc
 ## 示例
 1、在router文件中引入并配置在根节点中，如下：
 ```bash
-import KFCFrame from '@/components/kfc-frame'
+import KFCNavigation from '@/components/kfc-navigation'
 
     routes: [
     {
       path: '/',
       name: 'index',
-      component: KFCFrame,
+      component: KFCNavigation,
       children: [
         {
           path: '/page1',
