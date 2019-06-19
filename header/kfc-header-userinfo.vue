@@ -1,10 +1,13 @@
 <template>
   <div :class="[prefixCls]">
     <i-avatar icon="ios-person" size="large" />
-    <span :class="[prefixCls + '-name']">admin</span>
+    <span :class="[prefixCls + '-name']">{{ userName }}</span>
     <i-dropdown>
       <i-icon type="md-arrow-dropdown" />
       <i-dropdown-menu slot="list">
+        <i-dropdown-item @click.native="onModifyPassword">
+          修改密码
+        </i-dropdown-item>
         <i-dropdown-item @click.native="logout">
           退出
         </i-dropdown-item>
@@ -29,10 +32,14 @@ export default {
   },
   data () {
     return {
-      prefixCls: prefixCls
+      prefixCls: prefixCls,
+      userName: JSON.parse(localStorage.getItem('user')).name
     }
   },
   methods: {
+    onModifyPassword () {
+      this.$router.push('/modify-password')
+    },
     logout () {
     }
   }
